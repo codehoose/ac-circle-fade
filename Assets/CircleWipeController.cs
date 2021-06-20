@@ -16,6 +16,10 @@ public class CircleWipeController : MonoBehaviour
 
     public float _duration = 1f;
 
+    public Color _fadeColour = Color.black;
+
+    public Texture _fadeTexture;
+
     void Start()
     {
         material = new Material(shader);
@@ -63,5 +67,7 @@ public class CircleWipeController : MonoBehaviour
         material.SetFloat("_Vertical", _verical);
         material.SetFloat("_RadiusSpeed", radiusSpeed);
         material.SetFloat("_Radius", _radius);
+        material.SetColor("_FadeColour", _fadeColour);
+        material.SetTexture("_FadeTex", _fadeTexture);
     }
 }

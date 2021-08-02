@@ -3,11 +3,13 @@ using UnityEngine;
 
 public class CircleWipeController : MonoBehaviour
 {
+    private const float RADIUS = 2f;
+
     public Shader shader;
 
     private Material material;
 
-    [Range(0, 1.2f)]
+    [Range(0, RADIUS)]
     public float _radius = 0f;
 
     public float _horizontal = 16;
@@ -20,10 +22,12 @@ public class CircleWipeController : MonoBehaviour
 
     public Texture _fadeTexture;
 
+    public Vector2 _offset;
+
     void Start()
     {
         material = new Material(shader);
-        _radius = 1.2f;
+        _radius = RADIUS;
         UpdateShader();
     }
 
@@ -34,12 +38,12 @@ public class CircleWipeController : MonoBehaviour
 
     public void FadeOut()
     {
-        StartCoroutine(DoFade(1.2f, 0f));
+        StartCoroutine(DoFade(RADIUS, 0f));
     }
 
     public void FadeIn()
     {
-        StartCoroutine(DoFade(0, 1.2f));
+        StartCoroutine(DoFade(0, RADIUS));
     }
 
     IEnumerator DoFade(float start, float end)
@@ -69,5 +73,6 @@ public class CircleWipeController : MonoBehaviour
         material.SetFloat("_Radius", _radius);
         material.SetColor("_FadeColour", _fadeColour);
         material.SetTexture("_FadeTex", _fadeTexture);
+        material.SetVector("_Offset", _offset);
     }
 }

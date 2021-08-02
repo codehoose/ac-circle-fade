@@ -9,6 +9,7 @@ Shader "Unlit/CircleWipeShader"
         _Vertical("Vertical ratio", Float) = 0
         _RadiusSpeed("Radius Speed", Float) = 1
         _FadeColour("Fade Colour", Color) = (0, 0, 0, 0)
+        _Offset("Offset", Vector) = (0, 0, 0, 0)
     }
     SubShader
     {
@@ -46,6 +47,7 @@ Shader "Unlit/CircleWipeShader"
             float _Vertical;
             float _RadiusSpeed;
             fixed4 _FadeColour : COLOR;
+            float4 _Offset;
 
             v2f vert (appdata v)
             {
@@ -60,8 +62,8 @@ Shader "Unlit/CircleWipeShader"
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
                 fixed4 fadeCol = _FadeColour * tex2D(_FadeTex, i.uv);
-                float3 pos = float3((i.uv.x - 0.5) / _Vertical,
-                                    (i.uv.y - 0.5) / _Horizontal, 0);
+                float3 pos = float3((i.uv.x - _Offset.x - 0.5) / _Vertical,
+                                    (i.uv.y - _Offset.y - 0.5) / _Horizontal, 0);
 
 
                 return length(pos) > _Radius / _RadiusSpeed ? fadeCol : col;

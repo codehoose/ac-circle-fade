@@ -314,13 +314,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: b0d1ccff3b4b5464abcf59e16390c4d7, type: 3}
-  _radius: 0
-  _horizontal: 16
-  _verical: 9
-  _duration: 1
-  _fadeColour: {r: 1, g: 1, b: 1, a: 1}
-  _fadeTexture: {fileID: 2800000, guid: 21653debe50f5e0409c0674b0378611d, type: 3}
-  _offset: {x: 0, y: 0}
+  radius: 2
+  horizontal: 16
+  verical: 9
+  duration: 1
+  fadeColour: {r: 1, g: 1, b: 1, a: 1}
+  fadeTexture: {fileID: 2800000, guid: 21653debe50f5e0409c0674b0378611d, type: 3}
+  offset: {x: 0, y: 0}
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546ac47885b9e074a9da176991d4893d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _circleWipe: {fileID: 963194229}
+  circleWipe: {fileID: 0}
 --- !u!1 &1219401993
 GameObject:
   m_ObjectHideFlags: 0

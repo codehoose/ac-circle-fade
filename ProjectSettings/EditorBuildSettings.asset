@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/CircleWipeEffect/Scenes/FadeToNextScene.unity
+    guid: edd2448ec24c82d45b60cc7708e183dd
+  - enabled: 1
+    path: Assets/CircleWipeEffect/Scenes/NextScene.unity
+    guid: 47b99b2a19ae56d4eae8bcff6ce42411
   m_configObjects: {}
